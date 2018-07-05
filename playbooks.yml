@@ -1,0 +1,7 @@
+---
+- name: Install oh-my-zsh, powerlevel9k theme, fzf, autosuggestions, syntax-highlighting
+  hosts: all
+  become: true
+  gather_facts: no # don't gather facts because /usr/bin/python isn't set
+  roles:
+    - pre-tasks
