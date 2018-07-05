@@ -5,3 +5,4 @@
   gather_facts: no # don't gather facts because /usr/bin/python isn't set
   roles:
     - pre-tasks
+    - zsh
