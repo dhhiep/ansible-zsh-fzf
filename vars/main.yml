@@ -1,0 +1,6 @@
+---
+remove_oh_my_zsh_if_existed: false
+default_shell: zsh
+debug_mode: true
+main_user: vagrant
+main_dir: "/home/{{main_user}}"

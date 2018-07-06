@@ -3,3 +3,8 @@
   package:
     name: zsh
     state: present
+
+- name: Install Fonts Powerline
+  package:
+    name: fonts-powerline
+    state: present

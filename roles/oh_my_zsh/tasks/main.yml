@@ -1,0 +1,21 @@
+---
+- name: Load install script from server
+  get_url:
+    url: https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+    dest: "{{main_dir}}/oh-my-zsh.sh"
+    mode: 0777
+
+- name: Run script as {{main_user}}
+  become: true
+  become_user: "{{main_user}}"
+  command: "sh -C {{main_dir}}/oh-my-zsh.sh"
+
+- name: Change user ({{main_user}}) shell to {{default_shell}}
+  become: true
+  user:
+    name: main_user
+    shell: /bin/{{default_shell}}
+
+# - debug:
+#     msg: msg="{{ installing_oh_my_zsh.stdout }}"
+#   when: debug_mode
